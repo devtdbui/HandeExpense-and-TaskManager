@@ -39,7 +39,7 @@ public class main {
                     tp.checkAccount(bundle);
                     tp.checkPassword(bundle);
                     capcha = tp.randomCapcha();
-                    tp.checkCapcha(capcha, bundle);
+                    tp.checkCapchar(capcha, bundle);
                     break;
                 case 2:
 
@@ -47,7 +47,7 @@ public class main {
                     tp.checkAccount(bundle);
                     tp.checkPassword(bundle);
                     capcha = tp.randomCapcha();
-                    tp.checkCapcha(capcha, bundle);
+                    tp.checkCapchar(capcha, bundle);
                     break;
                 case 3:
                     System.exit(0);

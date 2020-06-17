@@ -98,7 +98,7 @@ public class TpBank {
         return capcha;
     }
 
-    public boolean checkCapcha(String capcha,ResourceBundle bundle) {
+    public boolean checkCapchar(String capcha, ResourceBundle bundle) {
         Scanner sc = new Scanner(System.in);
         String input = "";
         System.out.print(bundle.getString("capcha"));
@@ -110,6 +110,5 @@ public class TpBank {
             System.out.println(bundle.getString("wrong.capcha"));
             return false;
         }
-
     }
 }

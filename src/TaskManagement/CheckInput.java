@@ -48,40 +48,45 @@ public class CheckInput {
     }
 
     public double getFrom() {
-        double from = 0;
+        double result = 0;
         while (true) {
-            try {
-                System.out.println("input from: ");
-                from = Double.parseDouble(sc.nextLine());
-                if (from >= 8 && from <= 17.5) {
-                    if (from % 0.5 == 0) {
-                        return from;
-                    }
+            System.out.println("input from: ");
+            String from = sc.nextLine();
+            Pattern p1 = Pattern.compile("^[0-9]+$");
+            Pattern p2 = Pattern.compile("^[0-9]+.[05][0]*$");
+            if (p1.matcher(from).find() || p2.matcher(from).find()) {
+                result = Double.parseDouble(from);
+                if (result >= 8 && result <= 17.5) {
+                    break;
+                } else {
+                    System.out.println("number within 8-17.5");
                 }
-
-            } catch (Exception e) {
-                System.out.println("invalid from, please input again");
+            } else {
+                System.out.println("invalid number, please input again");
             }
-
         }
+        return result;
     }
 
     public double getTo(double from) {
-        double to = 0;
+        double result = 0;
         while (true) {
-            try {
-                System.out.println("input to: ");
-                to = Double.parseDouble(sc.nextLine());
-                if (to >= 8 && to <= 17.5 && to > from) {
-                    if (to % 0.5 == 0) {
-                        return to;
-                    }
+            System.out.println("input to: ");
+            String to = sc.nextLine();
+            Pattern p1 = Pattern.compile("^[0-9]+$");
+            Pattern p2 = Pattern.compile("^[0-9]+.[05][0]*$");
+            if (p1.matcher(to).find() || p2.matcher(to).find()) {
+                result = Double.parseDouble(to);
+                if (result >= 8 && result <= 17.5) {
+                    break;
+                } else {
+                    System.out.println("number within 8-17.5");
                 }
-            } catch (Exception e) {
-                System.out.println("invalid to, please input again");
+            } else {
+                System.out.println("invalid number, please input again");
             }
-
         }
+        return result;
     }
 
     public String getName() {
